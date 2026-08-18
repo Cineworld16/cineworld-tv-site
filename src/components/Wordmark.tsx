@@ -7,7 +7,7 @@ export default function Wordmark() {
         <Play className="h-3 w-3 text-white" fill="currentColor" strokeWidth={0} />
       </span>
       <span className="text-[15px] font-semibold tracking-tight text-ink">
-        CineRush <span className="font-normal text-faint">TV</span>
+        CineWorld
       </span>
     </span>
   );

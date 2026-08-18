@@ -12,7 +12,7 @@ function BrowserAddress({ url }: { url: string }) {
         <div className="ml-2 flex-1 rounded bg-white px-2 py-0.5 truncate font-mono">{url}</div>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center gap-2 bg-[#0b0b12] text-white">
-        <div className="text-lg font-extrabold brand-gradient">CineRush TV</div>
+        <div className="text-lg font-extrabold brand-gradient">CineWorld</div>
         <div className="text-[10px] text-white/50">Player web · entre com seu acesso</div>
       </div>
     </div>

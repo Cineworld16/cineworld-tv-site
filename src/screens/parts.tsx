@@ -57,7 +57,7 @@ export function XtreamForm({
       <div className="px-4 pt-8 pb-2 text-[12px] font-semibold border-b border-white/10">{title}</div>
       <div className="flex-1 overflow-auto p-3 flex flex-col justify-center">
         <div className="mx-auto w-full max-w-[230px] space-y-2">
-          <FieldRow label="Nome (qualquer)" value="CineRush" canCopy={false} />
+          <FieldRow label="Nome (qualquer)" value="CineWorld" canCopy={false} />
           <FieldRow label="Usuário" value={usuario} canCopy={filled} highlight />
           <FieldRow label="Senha" value={senha} canCopy={filled} highlight />
           <FieldRow label="URL do servidor" value={url} canCopy={filled} />

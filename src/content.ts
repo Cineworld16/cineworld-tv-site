@@ -1,6 +1,6 @@
 /**
  * Passo a passo de configuração por aparelho.
- * Baseado no roteiro real do suporte CineRush TV.
+ * Baseado no roteiro real do suporte CineWorld.
  *
  * - `**negrito**` é renderizado em destaque.
  * - `{{url}}` vira a URL de acesso (access_url) em runtime.
@@ -61,12 +61,12 @@ export const DEVICES: DeviceGuide[] = [
       },
       {
         title: 'Preencha seus dados',
-        body: 'No campo **Nome**, escreva CineRush. Depois preencha o **usuário**, a **senha** e a **URL** (o endereço "Servidor", aqui embaixo) e toque em **Add User**.',
+        body: 'No campo **Nome**, escreva CineWorld. Depois preencha o **usuário**, a **senha** e a **URL** (o endereço "Servidor", aqui embaixo) e toque em **Add User**.',
         showCredentials: true,
       },
       {
         title: 'Pronto!',
-        body: 'Seu CineRush TV está configurado. Toque em **TV ao Vivo**, **Filmes** ou **Séries** e bom filme!',
+        body: 'Seu CineWorld está configurado. Toque em **TV ao Vivo**, **Filmes** ou **Séries** e bom filme!',
       },
     ],
     alt: {
@@ -87,7 +87,7 @@ export const DEVICES: DeviceGuide[] = [
         },
         {
           title: 'Preencha seus dados',
-          body: 'Em **seu nome**, escreva CineRush. Depois preencha o **usuário**, a **senha** e a **URL** (o endereço "Servidor", aqui embaixo) e toque em **ADD PLAYLIST**.',
+          body: 'Em **seu nome**, escreva CineWorld. Depois preencha o **usuário**, a **senha** e a **URL** (o endereço "Servidor", aqui embaixo) e toque em **ADD PLAYLIST**.',
           showCredentials: true,
         },
         {
@@ -96,7 +96,7 @@ export const DEVICES: DeviceGuide[] = [
         },
         {
           title: 'Pronto!',
-          body: 'Seu CineRush TV está configurado. Toque em **LIVE**, **MOVIES** ou **SERIES** e bom filme!',
+          body: 'Seu CineWorld está configurado. Toque em **LIVE**, **MOVIES** ou **SERIES** e bom filme!',
         },
       ],
     },
@@ -120,7 +120,7 @@ export const DEVICES: DeviceGuide[] = [
       },
       {
         title: 'Preencha seus dados',
-        body: 'No campo **Nome**, use CineRush. Depois preencha o **usuário**, a **senha** e a **URL** (a URL é o endereço "Servidor" do seu acesso).',
+        body: 'No campo **Nome**, use CineWorld. Depois preencha o **usuário**, a **senha** e a **URL** (a URL é o endereço "Servidor" do seu acesso).',
         showCredentials: true,
       },
       carregando,

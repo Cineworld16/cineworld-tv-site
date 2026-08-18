@@ -125,7 +125,7 @@ export default function App() {
 
       <footer className="border-t border-white/[0.06]">
         <div className="mx-auto flex w-full max-w-xl items-center justify-between px-4 py-5 text-[12px] text-faint">
-          <span>© CineRush TV</span>
+          <span>© CineWorld</span>
           <span className="font-mono uppercase tracking-wider">Configuração de acesso</span>
         </div>
       </footer>
@@ -182,7 +182,7 @@ function DoneScreen({ onRestart }: { onRestart: () => void }) {
       </div>
       <h2 className="mt-5 text-[22px] font-semibold tracking-tight text-ink">Tudo pronto</h2>
       <p className="mx-auto mt-2 max-w-xs text-[14px] leading-relaxed text-sub">
-        Seu CineRush TV está configurado. Bom filme.
+        Seu CineWorld está configurado. Bom filme.
       </p>
       <button
         type="button"

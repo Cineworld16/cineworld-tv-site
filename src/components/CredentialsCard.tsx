@@ -16,7 +16,7 @@ export default function CredentialsCard({ creds, accessUrl, pending }: Props) {
     <div className="rounded-xl border border-white/10 bg-surface">
       <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-2.5">
         <span className="text-[13px] font-medium text-ink">Seu acesso</span>
-        <span className="font-mono text-[11px] uppercase tracking-wider text-faint">CineRush TV</span>
+        <span className="font-mono text-[11px] uppercase tracking-wider text-faint">CineWorld</span>
       </div>
       <div className="divide-y divide-white/[0.06] px-4">
         {creds ? (
