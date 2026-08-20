@@ -49,7 +49,7 @@ export const DEVICES: DeviceGuide[] = [
       {
         title: 'Baixe e abra o app',
         body: 'Na **App Store**, baixe o **VU IPTV Player** e toque em **Abrir**.\nNão funcionou no seu aparelho? Troque pelo **Smarters Player Lite** no link lá embaixo.',
-        link: { label: 'Abrir na App Store', url: 'https://apps.apple.com/app/id1628995509' },
+        link: { label: 'Abrir na App Store', url: 'https://apps.apple.com/app/id6526480705' },
       },
       {
         title: 'Escolha português e aceite',
@@ -75,7 +75,8 @@ export const DEVICES: DeviceGuide[] = [
       steps: [
         {
           title: 'Baixe e abra o app',
-          body: 'Na **App Store**, procure por **Smarters Player Lite** e toque em **Abrir**.',
+          body: 'Na **App Store**, baixe o **Smarters Player Lite** e toque em **Abrir**.',
+          link: { label: 'Abrir na App Store', url: 'https://apps.apple.com/app/id1628995509' },
         },
         {
           title: 'Adicione uma playlist',
@@ -104,23 +105,23 @@ export const DEVICES: DeviceGuide[] = [
   {
     id: 'androidtv',
     label: 'TV Android / Fire Stick',
-    sublabel: 'Downloader + 9Xtream',
+    sublabel: 'PLAYSIM',
     steps: [
       {
         title: 'Instale o Downloader',
         body: 'Na sua TV, abra a loja de apps (Play Store ou Amazon Appstore) e instale o app **Downloader**.',
       },
       {
-        title: 'Baixe o 9Xtream',
-        body: 'Abra o Downloader e digite o código **8621576** na busca. Baixe e instale o app **9Xtream**.',
+        title: 'Baixe o PLAYSIM',
+        body: 'Abra o Downloader e digite o link **aftv.news/5082303** na busca. Baixe e instale o app **PLAYSIM**.',
       },
       {
-        title: 'Adicione um usuário',
-        body: 'Abra o 9Xtream e escolha **adicionar usuário** — a opção **Xtream Codes** é entrar com usuário e senha.',
+        title: 'Adicione sua lista',
+        body: 'Abra o **PLAYSIM** e toque em **Adicionar lista de reprodução**.',
       },
       {
         title: 'Preencha seus dados',
-        body: 'No campo **Nome**, use CineWorld. Depois preencha o **usuário**, a **senha** e a **URL** (a URL é o endereço "Servidor" do seu acesso).',
+        body: 'No campo **Código**, digite **739285** (é sempre esse código, igual pra todo mundo). Depois preencha o **usuário** e a **senha** aqui embaixo e toque em **Ok**.',
         showCredentials: true,
       },
       carregando,

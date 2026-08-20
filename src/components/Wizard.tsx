@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Check, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Download } from 'lucide-react';
 import { useEffect, useState, type ReactNode } from 'react';
 import type { DeviceGuide } from '../content';
 import { DEVICE_ICON, DEVICE_ICON_STYLE } from '../deviceIcons';
@@ -6,6 +6,27 @@ import { VISUAL_SCREENS } from '../screens';
 import { WhatsAppIcon } from './BrandIcons';
 import CredentialsCard, { type Creds } from './CredentialsCard';
 import DeviceFrame from './DeviceFrame';
+
+/** Botão grande de download — a ação mais importante do passo, não pode passar despercebida. */
+function DownloadButton({ label, url }: { label: string; url: string }) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className="mt-3 flex items-center gap-3 rounded-2xl border border-brandPink/50 bg-gradient-to-r from-brandPurple/25 to-brandPink/25 px-5 py-4 shadow-[0_0_24px_-8px_rgba(236,72,153,0.55)] transition hover:from-brandPurple/35 hover:to-brandPink/35 hover:shadow-[0_0_28px_-6px_rgba(236,72,153,0.7)] active:scale-[0.99]"
+    >
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/10">
+        <Download className="h-5 w-5 text-white" strokeWidth={2} />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-[15px] font-bold uppercase tracking-wide text-ink">{label}</span>
+        <span className="block text-[12px] text-sub">Toque para baixar agora</span>
+      </span>
+      <ArrowRight className="h-5 w-5 shrink-0 text-ink" strokeWidth={2} />
+    </a>
+  );
+}
 
 interface Props {
   device: DeviceGuide;
@@ -99,17 +120,7 @@ export default function Wizard({
         <p className="mt-1.5 text-[14px] leading-relaxed text-sub whitespace-pre-line">
           {renderBold(withUrl(step.body))}
         </p>
-        {vstep && step.link && (
-          <a
-            href={withUrl(step.link.url)}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-medium text-accent transition hover:opacity-80"
-          >
-            {step.link.label}
-            <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.75} />
-          </a>
-        )}
+        {vstep && step.link && <DownloadButton label={step.link.label} url={withUrl(step.link.url)} />}
       </div>
 
       {vstep ? (
@@ -120,7 +131,9 @@ export default function Wizard({
                 <div key={i} className="absolute inset-0 animate-screen-in">
                   {vstep.render(ctx)}
                 </div>
-                {vstep.hotspot && <Hotspot {...vstep.hotspot} />}
+                {vstep.hotspot && (
+                  <Hotspot {...vstep.hotspot} href={step.link ? withUrl(step.link.url) : undefined} />
+                )}
               </DeviceFrame>
             </div>
           </div>
@@ -128,17 +141,7 @@ export default function Wizard({
         </div>
       ) : (
         <div className="space-y-4">
-          {step.link && (
-            <a
-              href={withUrl(step.link.url)}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-accent hover:opacity-80"
-            >
-              {step.link.label}
-              <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.75} />
-            </a>
-          )}
+          {step.link && <DownloadButton label={step.link.label} url={withUrl(step.link.url)} />}
           {step.showCredentials && <CredentialsCard creds={creds} accessUrl={accessUrl} />}
         </div>
       )}
@@ -197,11 +200,20 @@ export default function Wizard({
   );
 }
 
-/** Marcação pulsante (anel + label) sobre o botão que a pessoa deve tocar. */
-function Hotspot({ x, y, label }: { x: number; y: number; label?: string }) {
+/**
+ * Marcação pulsante (anel + label) sobre o botão que a pessoa deve tocar.
+ * Quando `href` vem preenchido (passo com link de download), o próprio marcador
+ * fica clicável e manda pra loja — não é só decoração.
+ */
+function Hotspot({ x, y, label, href }: { x: number; y: number; label?: string; href?: string }) {
   const labelBelow = y < 38;
+  const Tag = href ? 'a' : 'div';
   return (
-    <div className="pointer-events-none absolute z-30" style={{ left: `${x}%`, top: `${y}%` }}>
+    <Tag
+      {...(href ? { href, target: '_blank', rel: 'noreferrer' } : {})}
+      className={`absolute z-30 ${href ? 'cursor-pointer' : 'pointer-events-none'}`}
+      style={{ left: `${x}%`, top: `${y}%` }}
+    >
       <span className="relative block -translate-x-1/2 -translate-y-1/2">
         <span className="relative grid h-7 w-7 place-items-center">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/50" />
@@ -217,6 +229,6 @@ function Hotspot({ x, y, label }: { x: number; y: number; label?: string }) {
           </span>
         )}
       </span>
-    </div>
+    </Tag>
   );
 }
